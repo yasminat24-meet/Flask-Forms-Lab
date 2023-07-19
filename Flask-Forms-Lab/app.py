@@ -31,12 +31,10 @@ def home_page():
 
 @app.route('/friend_exists/<string:name>')
 def friend(name):
-    return render_template('home.html',  facebook_friends=facebook_friends)
-@app.route('friend_exists,<string:name>')
- if name in facebook_friends:
- 	result=true
- else:
- 	result=false
+		if name in facebook_friends:
+    	result=True
+		else:
+			result=False
 return render_template('friend_exists.html',name=name,result=result)
 
 if __name__ == "__main__":  # Makes sure this is the main process
